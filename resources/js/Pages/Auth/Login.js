@@ -44,9 +44,10 @@ export default function Login({ status, canResetPassword }) {
                 <Flex flexDir="column" justifyContent="flex-end">
                     <VStack>
                         <Input
-                            label="Email"
+                            isFocused
                             type="email"
                             name="email"
+                            label="Email"
                             value={data.email}
                             errors={errors?.email}
                             onChange={onHandleChange}
