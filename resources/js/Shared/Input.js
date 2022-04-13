@@ -9,13 +9,7 @@ export default function Input({ label, errors, ...rest }) {
     return (
         <FormControl isRequired isInvalid={errors}>
             <FormLabel fontWeight="normal">{label}</FormLabel>
-            <ChakraInput
-                {...rest}
-                type="email"
-                name="email"
-                value={data.email}
-                onChange={onHandleChange}
-            />
+            <ChakraInput {...rest} />
             {errors && <FormErrorMessage>{errors}</FormErrorMessage>}
         </FormControl>
     );
