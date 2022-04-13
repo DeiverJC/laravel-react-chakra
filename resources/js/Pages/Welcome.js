@@ -1,13 +1,7 @@
 import React from "react";
 import { Link as InertiaLink, Head } from "@inertiajs/inertia-react";
-import {
-    Box,
-    Button,
-    ButtonGroup,
-    Flex,
-    Heading,
-    Text,
-} from "@chakra-ui/react";
+import { Box, ButtonGroup, Flex, Heading, Text } from "@chakra-ui/react";
+import { BrandButton, OutlineButton } from "@/Shared";
 
 export default function Welcome(props) {
     return (
@@ -15,39 +9,17 @@ export default function Welcome(props) {
             <Head title="Welcome" />
             <Flex py={2} px={3} justify="flex-end">
                 {props.auth.user ? (
-                    <Button
-                        colorScheme="purple"
-                        as={InertiaLink}
-                        href={route("register")}
-                        bgGradient="linear(to-r, purple.500, blue.500)"
-                        _hover={{
-                            bgGradient: "linear(to-r, purple.500, blue.500)",
-                        }}
-                    >
+                    <BrandButton as={InertiaLink} href={route("register")}>
                         Dashboard
-                    </Button>
+                    </BrandButton>
                 ) : (
                     <ButtonGroup>
-                        <Button
-                            colorScheme="purple"
-                            variant="outline"
-                            as={InertiaLink}
-                            href={route("login")}
-                        >
-                            Sing in
-                        </Button>
-                        <Button
-                            colorScheme="purple"
-                            as={InertiaLink}
-                            href={route("register")}
-                            bgGradient="linear(to-r, purple.500, blue.500)"
-                            _hover={{
-                                bgGradient:
-                                    "linear(to-r, purple.500, blue.500)",
-                            }}
-                        >
-                            Sing up
-                        </Button>
+                        <OutlineButton as={InertiaLink} href={route("login")}>
+                            Log in
+                        </OutlineButton>
+                        <BrandButton as={InertiaLink} href={route("register")}>
+                            Sign up
+                        </BrandButton>
                     </ButtonGroup>
                 )}
             </Flex>
